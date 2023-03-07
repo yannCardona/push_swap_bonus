@@ -34,7 +34,9 @@ int	main(int argc, char *argv[])
 	t_list	**list_a;
 	t_list	**list_b;
 	char	*move;
+	char	*buff;
 
+	buff = "AAA";
 	list_a = malloc(sizeof(list_a));
 	list_b = malloc(sizeof(list_b));
 	if (ft_ini_list(list_a, argc, argv) == 0)
@@ -43,9 +45,9 @@ int	main(int argc, char *argv[])
 		ft_free(list_b);
 		exit(1);
 	}
-	move = get_next_line(0);
-	while (move != NULL)
+	while (read(0, buff, 3) != 0)
 	{
+		move = get_next_line(0);
 		if (ft_strcomp(move, "ra\n") == 1)
 			ft_rotate(list_a);
 		else if (ft_strcomp(move, "rb\n") == 1)

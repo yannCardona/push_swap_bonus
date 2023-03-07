@@ -50,13 +50,17 @@ int	ft_no_doubles(t_list *list)
 void	ft_del_max(t_list **list)
 {
 	t_list	*current;
+	int		max;
 
-	while ((*list)->content != ft_maxlst(*list))
+	max = ft_maxlst(*list);
+	current = *list;
+	while ((*list)->content != max)
 		ft_rotate(list);
 	current = *list;
+	current = current->next;
+	current->prev = NULL;
 	free(*list);
-	(current->next)->prev = NULL;
-	*list = current->next;
+	*list = current;
 }
 
 void	ft_del_min(t_list **list)
@@ -66,9 +70,10 @@ void	ft_del_min(t_list **list)
 	while ((*list)->content != ft_minlst(*list))
 		ft_rotate(list);
 	current = *list;
+	current = current->next;
+	current->prev = NULL;
 	free(*list);
-	(current->next)->prev = NULL;
-	*list = current->next;
+	*list = current;
 }
 
 void	ft_copy_lst(t_list *list, t_list **copy)
