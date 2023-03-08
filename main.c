@@ -6,7 +6,7 @@
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:27:34 by ycardona          #+#    #+#             */
-/*   Updated: 2023/03/06 15:29:00 by ycardona         ###   ########.fr       */
+/*   Updated: 2023/03/08 21:57:45 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,6 @@ int	main(int argc, char *argv[])
 		ft_free(list_b);
 		return (0);
 	}
-	/* t_list *current;
-	
-	ft_rotate(list_a);
-	printf("%i\n\n", ft_maxlst(*list_a));
-	ft_del_max(list_a);
-	current = *list_a;
-	while (current != NULL)
-	{
-		printf("%i\n", current->content);
-		current = current->next;
-	} */
-
 	if (ft_lstsize(*list_a) <= 5)
 		push_swap_small(list_a, list_b);
 	else

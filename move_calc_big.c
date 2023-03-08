@@ -6,7 +6,7 @@
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 16:44:22 by ycardona          #+#    #+#             */
-/*   Updated: 2023/03/05 20:15:49 by ycardona         ###   ########.fr       */
+/*   Updated: 2023/03/08 21:06:43 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,73 +23,12 @@ int	ft_pivot(t_list *list)
 	copy = malloc(sizeof(copy));
 	ft_copy_lst(list, copy);
 	i = 0;
-	//if (ft_lstsize(list) <= 100)
-	//{
-		while (i < 2)
-		{
-			ft_del_max(copy);
-			i++;
-		}
-		pivot = ft_maxlst(*copy);
-	//}
-/* 	else if (ft_lstsize(list) <= 250)
+	while (i < 2)
 	{
-		while (i < 199)
-		{
-			ft_del_max(copy);
-			i++;
-		}
+		ft_del_max(copy);
+		i++;
 	}
-	else if (ft_lstsize(list) <= 300)
-	{
-		while (i < 249)
-		{
-			ft_del_max(copy);
-			i++;
-		}
-	}
-	else if (ft_lstsize(list) <= 350)
-	{
-		while (i < 299)
-		{
-			ft_del_max(copy);
-			i++;
-		}
-	}
-	else if (ft_lstsize(list) <= 400)
-	{
-		while (i < 349)
-		{
-			ft_del_max(copy);
-			i++;
-		}
-	}
-	else if (ft_lstsize(list) <= 450)
-	{
-		while (i < 399)
-		{
-			ft_del_max(copy);
-			i++;
-		}
-	}
-	else if (ft_lstsize(list) <= 500)
-	{
-		while (i < 449)
-		{
-			ft_del_max(copy);
-			i++;
-		}
-	} 
-	else
-	{
-		while (i < 95)
-		{
-			ft_del_max(copy);
-			i++;
-		}
-		pivot = ft_maxlst(*copy);
-	}*/
-//	pivot = ft_maxlst(*copy);
+	pivot = ft_maxlst(*copy);
 	ft_free(copy);
 	return (pivot);
 }
@@ -164,7 +103,6 @@ t_list	*ft_best_move(t_list **list_a, t_list **list_b, int pivot)
 	int		least_ops;
 	t_list	*current;
 	t_list	*best;
-	//int		pivot = ft_pivot(*list_a);
 
 	least_ops = ft_lstsize(*list_a) + ft_lstsize(*list_b);
 	current = *list_a;
