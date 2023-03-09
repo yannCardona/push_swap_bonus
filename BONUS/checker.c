@@ -6,7 +6,7 @@
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:30:06 by ycardona          #+#    #+#             */
-/*   Updated: 2023/03/08 22:34:30 by ycardona         ###   ########.fr       */
+/*   Updated: 2023/03/09 16:12:34 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ int	main(int argc, char *argv[])
 	t_list	**list_b;
 	char	*move;
 
-	list_a = malloc(sizeof(list_a));
-	list_b = malloc(sizeof(list_b));
+	list_a = calloc(1, sizeof(list_a));
+	list_b = calloc(1, sizeof(list_b));
 	if (ft_ini_list_bonus(list_a, argc, argv) == 0)
 	{
 		ft_free_ab(list_a, list_b);
@@ -92,6 +92,7 @@ int	main(int argc, char *argv[])
 		exec_op_rot(move, list_a, list_b);
 		exec_op_p_s(move, list_a, list_b);
 		no_operation(move, list_a, list_b);
+		free(move);
 		move = get_next_line(0);
 	}
 	if (ft_is_ascending(*list_a) == 1 && ft_lstsize(*list_b) == 0)

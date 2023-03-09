@@ -6,7 +6,7 @@
 /*   By: ycardona <ycardona@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:25:27 by ycardona          #+#    #+#             */
-/*   Updated: 2023/03/08 22:10:42 by ycardona         ###   ########.fr       */
+/*   Updated: 2023/03/09 14:53:57 by ycardona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	ft_ini_list(t_list **list_a, int argc, char *argv[])
 {
 	int	i;
 
-	if (argc == 1)
-		return (0);
 	i = 1;
 	while (i < argc)
 	{
